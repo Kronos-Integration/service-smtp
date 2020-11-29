@@ -24,6 +24,10 @@ export class ServiceSMTP extends Service {
         },
         port: {
           type: "number"
+        },
+        secure: {
+          type: "boolean",
+          default: true
         }
       })
     );
@@ -41,12 +45,18 @@ export class ServiceSMTP extends Service {
   async send(request) {
     const client = new SMTPClient({
       host: this.host,
-      port: this.port
+      port: this.port,
+      secure: this.secure
     });
 
     await client.connect();
-    await client.greet({ hostname: "mx.domain.com" }); // runs EHLO command or HELO as a fallback
-    await client.authPlain({ username: "alice@example.com", password: "secret" });
+    this.info(await client.ehlo());
+    this.info(client.getAuthMechanisms().join(","));
+
+    await client.authPlain({
+      username: "alice@example.com",
+      password: "secret"
+    });
     await client.mail({ from: request.from });
     await client.rcpt({ to: request.to });
     await client.data(request.data);
