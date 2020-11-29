@@ -3,6 +3,16 @@ name: CI
 jobs:
   test:
     runs-on: ubuntu-latest
+    services:
+      smtp:
+        image: bytemark/smtp
+        env:
+          RELAY_HOST: smtp.example.com
+          RELAY_PORT: 587
+          RELAY_USERNAME: alice@example.com
+          RELAY_PASSWORD: secretpassword
+        ports:
+          - '587:587'
     strategy:
       matrix:
         node-version:

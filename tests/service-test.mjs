@@ -6,7 +6,7 @@ import { ServiceSMTP } from "@kronos-integration/service-smtp";
 const config = {
   type: ServiceSMTP,
   host: 'localhost',
-  port: 1025,
+  port: 587,
 };
 
 test("service-smtp send", async t => {
