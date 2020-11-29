@@ -47,9 +47,9 @@ export class ServiceSMTP extends Service {
     await client.connect();
     await client.greet({ hostname: "mx.domain.com" }); // runs EHLO command or HELO as a fallback
     await client.authPlain({ username: "alice@example.com", password: "secret" });
-    await client.mail({ from: "from@sender.com" }); // runs MAIL FROM command
-    await client.rcpt({ to: "to@recipient.com" }); // runs RCPT TO command (run this multiple times to add more recii)
-    await client.data("mail source"); // runs DATA command and streams email source
+    await client.mail({ from: request.from });
+    await client.rcpt({ to: request.to });
+    await client.data(request.data);
     await client.quit();
   }
 }

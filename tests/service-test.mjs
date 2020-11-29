@@ -2,11 +2,10 @@ import test from "ava";
 import { StandaloneServiceProvider } from "@kronos-integration/service";
 import { ServiceSMTP } from "@kronos-integration/service-smtp";
 
-
 const config = {
   type: ServiceSMTP,
-  host: 'localhost',
-  port: 587,
+  host: "localhost",
+  port: 587
 };
 
 test("service-smtp send", async t => {
@@ -14,7 +13,11 @@ test("service-smtp send", async t => {
   const smtp = await sp.declareService(config);
 
   t.deepEqual(
-    await smtp.send({ username: "user1", password: "test" }),
-    {  }
+    await smtp.send({
+      from: "someone@example.com",
+      to: "someone@example.com",
+      data: "body"
+    }),
+    {}
   );
 });
