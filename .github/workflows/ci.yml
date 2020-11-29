@@ -10,7 +10,7 @@ jobs:
           RELAY_HOST: smtp.example.com
           RELAY_PORT: 587
           RELAY_USERNAME: alice@example.com
-          RELAY_PASSWORD: secretpassword
+          RELAY_PASSWORD: secret
         ports:
           - '587:587'
     strategy:
