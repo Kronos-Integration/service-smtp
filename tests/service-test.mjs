@@ -5,8 +5,9 @@ import { ServiceSMTP } from "@kronos-integration/service-smtp";
 const config = {
   type: ServiceSMTP,
   host: "localhost",
+  port: 587,
   auth: {
-    username: "xyz",
+    username: "alice@example.com",
     password: "secret"
   }
 };
