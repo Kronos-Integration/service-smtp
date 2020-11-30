@@ -6,3 +6,19 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 # service-smtp
 SMTP for kronos
+
+
+# API
+
+
+# install
+
+With [npm](http://npmjs.org) do:
+
+```shell
+npm install @kronos-integration/service-smtp
+```
+
+# license
+
+BSD-2-Clause
