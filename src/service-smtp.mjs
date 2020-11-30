@@ -23,11 +23,12 @@ export class ServiceSMTP extends Service {
           type: "string"
         },
         port: {
-          type: "number"
+          type: "number",
+          default: 25
         },
         secure: {
           type: "boolean",
-          default: true
+          default: false
         }
       })
     );
@@ -50,10 +51,15 @@ export class ServiceSMTP extends Service {
     });
 
     await client.connect();
+    await client.ehlo();
+    if (client.hasExtension("STARTTLS")) {
+      await client.secure();
+    }
+
     this.info(await client.ehlo());
     this.info(client.getAuthMechanisms().join(","));
 
-    await client.authPlain({
+    await client.authLogin({
       username: "alice@example.com",
       password: "secret"
     });
