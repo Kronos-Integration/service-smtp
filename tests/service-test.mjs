@@ -22,5 +22,8 @@ test("service-smtp send", async t => {
       data: "test#4"
     });
     t.true(true);
-  } catch (e) {}
+  } catch (e) {
+    t.log(e);
+    t.true(false);
+  }
 });
