@@ -30,7 +30,7 @@
     "lint:docs": "documentation lint ./src/service-smtp.mjs"
   },
   "dependencies": {
-    "@kronos-integration/service": "^10.0.1",
+    "@kronos-integration/service": "^10.0.2",
     "model-attributes": "^4.1.7",
     "smtp-client": "^0.3.3"
   },
