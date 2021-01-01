@@ -15,7 +15,6 @@ export class ServiceSMTP extends Service {
 
   static get configurationAttributes() {
     return mergeAttributes(
-      Service.configurationAttributes,
       createAttributes({
         host: {
           needsRestart: true,
@@ -42,7 +41,8 @@ export class ServiceSMTP extends Service {
             }
           }
         }
-      })
+      }),
+      Service.configurationAttributes
     );
   }
 
