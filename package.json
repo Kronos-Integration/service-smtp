@@ -30,7 +30,7 @@
   "dependencies": {
     "@kronos-integration/service": "^10.3.14",
     "model-attributes": "^4.1.9",
-    "smtp-client": "^0.3.3"
+    "smtp-client": "^0.4.0"
   },
   "devDependencies": {
     "ava": "^3.15.0",
