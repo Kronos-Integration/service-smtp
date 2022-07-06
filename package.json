@@ -28,8 +28,8 @@
     "lint:docs": "documentation lint ./src/**/*.mjs"
   },
   "dependencies": {
-    "@kronos-integration/service": "^10.4.24",
-    "model-attributes": "^4.1.17",
+    "@kronos-integration/service": "^10.4.25",
+    "model-attributes": "^4.1.18",
     "smtp-client": "^0.4.0"
   },
   "devDependencies": {
