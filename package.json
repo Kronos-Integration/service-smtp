@@ -43,7 +43,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Kronos-Integration/service-smtp.git"
+    "url": "https://github.com/Kronos-Integration/service-smtp"
   },
   "bugs": {
     "url": "https://github.com/Kronos-Integration/service-smtp/issues"
