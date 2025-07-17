@@ -28,9 +28,9 @@
     "lint:docs": "documentation lint ./src/**/*.mjs"
   },
   "dependencies": {
-    "@kronos-integration/endpoint": "^9.5.7",
-    "@kronos-integration/service": "^11.2.11",
-    "model-attributes": "^4.2.5",
+    "@kronos-integration/endpoint": "^9.5.9",
+    "@kronos-integration/service": "^11.2.13",
+    "model-attributes": "^4.2.6",
     "smtp-client": "^0.4.0"
   },
   "devDependencies": {
