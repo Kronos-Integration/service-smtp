@@ -1,5 +1,5 @@
 import { SMTPClient } from "smtp-client";
-import { mergeAttributes, createAttributes } from "model-attributes";
+import { mergeAttributeDefinitions, prepareAttributesDefinitions } from "pacc";
 import { Service } from "@kronos-integration/service";
 
 /**
@@ -14,8 +14,8 @@ export class ServiceSMTP extends Service {
   }
 
   static get configurationAttributes() {
-    return mergeAttributes(
-      createAttributes({
+    return mergeAttributeDefinitions(
+      prepareAttributesDefinitions({
         host: {
           needsRestart: true,
           mandatory: true,
