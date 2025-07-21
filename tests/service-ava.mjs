@@ -5,14 +5,15 @@ import { ServiceSMTP } from "@kronos-integration/service-smtp";
 const config = {
   type: ServiceSMTP,
 
-  host: 'smtp.ethereal.email',
+  host: "smtp.ethereal.email",
   port: 587,
   auth: {
-    username: 'quinten.crist23@ethereal.email',
-    password: 'DTh5dnCsY1Y35QfCFU'
+    // name: "Magdalen Lynch"
+    username: "magdalen74@ethereal.email",
+    password: "Tj1gUVtbMsdGCV397D"
   }
 
-/*
+  /*
   host: "localhost",
   port: 587,
   auth: {
@@ -21,8 +22,6 @@ const config = {
   }
   */
 };
-
-    
 
 test("service-smtp send", async t => {
   const sp = new StandaloneServiceProvider();
