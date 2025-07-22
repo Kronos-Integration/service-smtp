@@ -1,8 +1,11 @@
 import { SMTPClient } from "smtp-client";
 import {
-  mergeAttributeDefinitions,
   prepareAttributesDefinitions,
-  boolean_attribute
+  boolean_attribute,
+  hostname_attribute,
+  port_attribute,
+  username_attribute,
+  password_attribute
 } from "pacc";
 import { Service } from "@kronos-integration/service";
 
@@ -17,31 +20,25 @@ export class ServiceSMTP extends Service {
     return "smtp";
   }
 
-  static attributes = mergeAttributeDefinitions(
-    prepareAttributesDefinitions({
+  static attributes = prepareAttributesDefinitions(
+    {
       host: {
+        ...hostname_attribute,
         needsRestart: true,
-        mandatory: true,
-        type: "string"
+        mandatory: true
       },
       port: {
-        type: "number",
+        ...port_attribute,
         default: 25
       },
       secure: boolean_attribute,
       auth: {
         attributes: {
-          username: {
-            type: "string",
-            private: true
-          },
-          password: {
-            type: "string",
-            private: true
-          }
+          username: username_attribute,
+          password: password_attribute
         }
       }
-    }),
+    },
     Service.attributes
   );
 
