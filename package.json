@@ -30,7 +30,7 @@
   "dependencies": {
     "@kronos-integration/endpoint": "^10.1.19",
     "@kronos-integration/service": "^13.2.40",
-    "pacc": "^4.40.2",
+    "pacc": "^4.40.3",
     "smtp-client": "^0.4.0"
   },
   "devDependencies": {
