@@ -2,25 +2,23 @@ import test from "ava";
 import { StandaloneServiceProvider } from "@kronos-integration/service";
 import { ServiceSMTP } from "@kronos-integration/service-smtp";
 
+/*
+Host	smtp.ethereal.email
+Port	587
+Security	STARTTLS
+Username	abdiel.fritsch@ethereal.email
+Password	c1Jr4vdW856YcUUD6S
+*/
+
 const config = {
   type: ServiceSMTP,
 
   host: "smtp.ethereal.email",
   port: 587,
   auth: {
-    // name: "Magdalen Lynch"
-    username: "magdalen74@ethereal.email",
-    password: "Tj1gUVtbMsdGCV397D"
+    username: "abdiel.fritsch@ethereal.email",
+    password: "c1Jr4vdW856YcUUD6S"
   }
-
-  /*
-  host: "localhost",
-  port: 587,
-  auth: {
-    username: "alice@example.com",
-    password: "secret"
-  }
-  */
 };
 
 test("service-smtp send", async t => {
